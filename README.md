@@ -268,5 +268,5 @@ El proyecto **Buo Ai** demuestra la viabilidad de utilizar técnicas de *machine
   Este proyecto se distribuye bajo la [MIT License](LICENSE).
 
 - **Contacto:**  
-  Para cualquier duda, sugerencia o colaboración, puedes escribir a [Info@BUOIA.com] o visitar nuestra pagina (https://buoIA.com.co).
+  Para cualquier duda, sugerencia o colaboración, puedes escribir a [Info@BUOAI.com] o visitar nuestra pagina (https://buoAI.com.co).
 
