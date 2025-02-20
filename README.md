@@ -59,6 +59,28 @@ El proyecto se compone de las siguientes fases:
 - **División Utilizada para el Proyecto:**  
   - **Train:** 80,000 registros  
   - **Test:** 20,000 registros
+ 
+La base de datos se compone de 14 columnas, que son las diferentes variables y 3.713.576 de observaciones que ya están divididas en el grupo de entrenameinto, validación y prueba.
+
+El conjunto de datos de detección de fraude crediticio disponible en [Hugging Face](https://huggingface.co/datasets/rohan-chandrashekar/credit_fraud_detection) contiene las siguientes 14 variables representadas en las columnas:
+
+| **Columna**                  | **Descripción**                                                                                                                                                                                                 | **Tipo de Variable** |
+|-------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------|
+| `amount`                      | Monto de la transacción.                                                                                                                                                                                        | Numérica (float64)   |
+| `nameOrig`                    | Identificador único del cliente que inicia la transacción.                                                                                                                                                      | Categórica (int64)   |
+| `oldBalanceOrig`              | Saldo de la cuenta del originador antes de la transacción.                                                                                                                                                      | Numérica (float64)   |
+| `newBalanceOrig`              | Saldo de la cuenta del originador después de la transacción.                                                                                                                                                    | Numérica (float64)   |
+| `nameDest`                    | Identificador único del cliente o entidad que recibe la transacción.                                                                                                                                            | Categórica (int64)   |
+| `oldBalanceDest`              | Saldo de la cuenta del destinatario antes de la transacción.                                                                                                                                                    | Numérica (float64)   |
+| `newBalanceDest`              | Saldo de la cuenta del destinatario después de la transacción.                                                                                                                                                  | Numérica (float64)   |
+| `isFraud`                     | Indicador de si la transacción es fraudulenta (1) o no (0).                                                                                                                                                     | Binaria (int64)      |
+| `isUnauthorizedOverdraft`     | Indicador de si la transacción resultó en un sobregiro no autorizado (1) o no (0).                                                                                                                              | Binaria (int64)      |
+| `action__CASH_IN`             | Indicador de si la acción de la transacción es un depósito de efectivo (1) o no (0).                                                                                                                            | Binaria (int64)      |
+| `action__CASH_OUT`            | Indicador de si la acción de la transacción es un retiro de efectivo (1) o no (0).                                                                                                                              | Binaria (int64)      |
+| `action__DEBIT`               | Indicador de si la acción de la transacción es un débito (1) o no (0).                                                                                                                                           | Binaria (int64)      |
+| `action__PAYMENT`             | Indicador de si la acción de la transacción es un pago (1) o no (0).                                                                                                                                            | Binaria (int64)      |
+| `action__TRANSFER`            | Indicador de si la acción de la transacción es una transferencia (1) o no (0).                                                                                                                                   | Binaria (int64)      |
+
 
 ---
 
