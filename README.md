@@ -24,7 +24,6 @@ Este proyecto, desarrollado en el marco de la asignatura de IA Aplicada a la Eco
 - [Estructura del Código](#estructura-del-código)
 - [Explicación para No Programadores](#explicación-para-no-programadores)
 - [Explicación para Programadores](#explicación-para-programadores)
-- [Instalación y Ejecución](#instalación-y-ejecución)
 - [Conclusiones y Posibles Mejoras](#conclusiones-y-posibles-mejoras)
 - [Licencia y Contacto](#licencia-y-contacto)
 
@@ -133,20 +132,25 @@ Se implementan y evalúan tres modelos principales:
 
 ## Estructura del Código
 
-El proyecto se organiza de forma modular para mantener el código limpio y fácil de mantener. Una estructura sugerida es la siguiente:
 
-Buo-Arain.csv         # Conjunto de entrenamiento (80,000 registros)
+El proyecto se organiza de forma modular para mantener el código limpio y fácil de mantener.  
+Una estructura sugerida es la siguiente:
+
+```
+Buo-Ai/
+├── data/
+│   ├── train.csv         # Conjunto de entrenamiento (80,000 registros)
 │   └── test.csv          # Conjunto de prueba (20,000 registros)
 ├── notebooks/            # Notebooks para exploración y análisis de datos
 ├── src/
 │   ├── preprocessing.py  # Funciones de carga, limpieza, creación de variables y estandarización
 │   ├── eda.py            # Scripts para análisis exploratorio y generación de reportes
 │   ├── models.py         # Implementación y ajuste de modelos (Ridge, Lasso y kNN)
-│   └── main.py           # Script principal que integra el pipeline completo
+│   └── main.py           # Script principal que integra todo el pipeline
 ├── requirements.txt      # Dependencias del proyecto
-└── README.md             # Este archivoi/
-├── data/
-│   ├── t
+└── README.md             # Este archivo
+```
+
 
 
 
@@ -201,49 +205,6 @@ Para los usuarios con conocimientos técnicos, se detallan los aspectos claves:
 - **Evaluación:**  
   Se calculan métricas como accuracy, precision, recall y F1-score. También se generan matrices de confusión y se traza la curva ROC para comparar el desempeño entre modelos.
 
----
-
-## Instalación y Ejecución
-
-### Requisitos
-
-- Python 3.7 o superior.
-- Las librerías especificadas en `requirements.txt`.
-
-### Pasos de Instalación
-
-1. **Clonar el Repositorio:**
-
-   ```bash
-   git clone https://github.com/tu-usuario/buo-ai.git
-   cd buo-ai
-
-2. **Crear un Entorno Virtual (opcional, pero recomendado):**
-
-   ```bash
-   python -m venv env
-   source env/bin/activate  # En Windows: env\Scripts\activate
-
-3. **Instalar Dependencias:**
-
-   ```bash
-   pip install -r requirements.txt
-
- 4. **Descargar el Dataset:**
-
-   Asegúrate de tener acceso al dataset en [Hugging Face](https://huggingface.co/datasets/rohan-chandrashekar/credit_fraud_detection)  
-   o descarga manualmente los archivos `train` y `test` y colócalos en la carpeta `data/`.
-
-   ```bash
-   # Ejemplo de descarga con wget (si está disponible en tu entorno)
-   wget https://huggingface.co/datasets/rohan-chandrashekar/credit_fraud_detection/resolve/main/data/train-00000-of-00001.parquet -O data/train.csv
-   wget https://huggingface.co/datasets/rohan-chandrashekar/credit_fraud_detection/resolve/main/data/test-00000-of-00001.parquet -O data/test.csv 
-```
-5. **Ejecutar el Pipeline Completo:**
-
- ```bash
-   python src/main.py
-```
 ---
 
 ## Conclusiones y Posibles Mejoras
