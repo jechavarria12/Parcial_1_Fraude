@@ -1,3 +1,5 @@
+![](Logoia.png)
+
 # Buo Ai – Detección de Fraude Financiero con Machine Learning
 
 Este proyecto, desarrollado en el marco de la asignatura de IA Aplicada a la Economía, tiene como objetivo identificar transacciones fraudulentas mediante técnicas de machine learning. Se utiliza un dataset real obtenido de Hugging Face, y se aplican diversas técnicas de preprocesamiento, análisis descriptivo y modelado utilizando algoritmos como Regresión Ridge (L2), Regresión Lasso (L1) y k-Nearest Neighbors (kNN). Además, se implementa un balanceo de clases con SMOTE y se evalúan los modelos mediante métricas estándar y curvas ROC.
