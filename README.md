@@ -16,8 +16,9 @@ Este proyecto, desarrollado en el marco de la asignatura de IA Aplicada a la Eco
   - [Limpieza y Creación de Variables Derivadas](#limpieza-y-creación-de-variables-derivadas)
   - [Estandarización de Variables](#estandarización-de-variables)
 - [Modelado y Evaluación](#modelado-y-evaluación)
-  - [Regresión Ridge (L2)](#regresión-ridge-l2)
+  - [Regresión Ridge NB (L2)](#regresión-ridge-nb-l2)
   - [Balanceo de Datos con SMOTE](#balanceo-de-datos-con-smote)
+  - [Regresión Ridge B (L2)](#regresión-ridge-b-l2)
   - [Regresión Lasso (L1)](#regresión-lasso-l1)
   - [Modelo k-Nearest Neighbors (kNN)](#modelo-k-nearest-neighbors-knn)
   - [Curva ROC y Comparación de Modelos](#curva-roc-y-comparación-de-modelos)
@@ -122,7 +123,7 @@ El script instala múltiples librerías necesarias mediante `pip` (como pandas, 
 
 Se implementan y evalúan tres modelos principales:
 
-### Regresión Ridge (L2)
+### Regresión Ridge NB (L2) 
 
 - Se utiliza `LogisticRegression` con penalización L2.
 - Se realiza una búsqueda de hiperparámetros (valor de `C`) mediante `GridSearchCV`.
@@ -133,6 +134,14 @@ Se implementan y evalúan tres modelos principales:
 
 - Debido al desbalance en la variable `isFraud`, se aplica SMOTE para balancear el conjunto de entrenamiento.
 - Se entrena nuevamente el modelo Ridge con los datos balanceados y se evalúa su desempeño.
+
+### Regresión Ridge B (L2)
+
+- Se utiliza `LogisticRegression` con penalización L2.
+- Se realiza una búsqueda de hiperparámetros (valor de `C`) mediante `GridSearchCV`.
+- Se evalúa el modelo en los conjuntos de entrenamiento y prueba calculando métricas como accuracy, precision, recall y F1-score.
+- Se generan matrices de confusión para visualizar los resultados.
+- Se evidencia que empeoran los resultados con respecto a la primera regresión Ridge
 
 ### Regresión Lasso (L1)
 
@@ -147,7 +156,6 @@ Se implementan y evalúan tres modelos principales:
 ### Curva ROC y Comparación de Modelos
 
 - Se obtiene la probabilidad de predicción de cada modelo (usando el método `predict_proba`).
-- Se binarizan las etiquetas (en caso de ser necesario) y se calcula la curva ROC para cada modelo.
 - Se utiliza el área bajo la curva (AUC) para comparar el desempeño, y se traza un gráfico con diferentes colores para cada modelo.
 
 ---
@@ -161,8 +169,8 @@ Una estructura sugerida es la siguiente:
 ```
 Buo-Ai/
 ├── data/
-│   ├── train.csv         # Conjunto de entrenamiento (80,000 registros)
-│   └── test.csv          # Conjunto de prueba (20,000 registros)
+│   ├── train.csv         # Conjunto de entrenamiento (2.6 millones de registros)
+│   └── test.csv          # Conjunto de prueba (557,000 registros)
 ├── notebooks/            # Notebooks para exploración y análisis de datos
 ├── src/
 │   ├── preprocessing.py  # Funciones de carga, limpieza, creación de variables y estandarización
@@ -188,7 +196,7 @@ Esta sección explica el proyecto de forma sencilla:
   Detectar transacciones financieras sospechosas o fraudulentas para ayudar a prevenir pérdidas económicas y mejorar la seguridad de los sistemas de pago.
 
 - **Proceso General:**  
-  1. **Recopilación de Datos:**  
+  1. **Importación de Datos:**  
      Se obtiene un gran conjunto de datos reales que contiene información de transacciones, como montos, saldos y tipos de acción (depósito, retiro, transferencia, etc.).
   2. **Preparación de la Información:**  
      - Se limpian los datos, eliminando registros erróneos o duplicados.
